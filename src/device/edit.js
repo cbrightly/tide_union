@@ -12,7 +12,7 @@ import { Lang } from '../public';
 import SystemApi from '../jssdk/system';
 import Device from '../jssdk/device';
 import { showDialog, changeFromPage } from '../action';
-import { saveDeviceItem, setEditingName, shouldUpdateDeviceList, updateDeviceInfo } from '../action/device';
+import { saveDeviceItem, setEditingName, shouldUpdateDeviceList } from '../action/device';
 import './default/edit.css';
 import ScrollView from '../component/scrollView';
 import OTA from '../jssdk/ota';
@@ -273,7 +273,7 @@ class DeviceEdit extends Component {
 				actions.changeFromPage('list');
 				this.resetData();
 
-				actions.updateDeviceInfo({
+				actions.saveDeviceItem({
 					devId: device.devId,
 					name: name.trim(),
 					icon: device.icon,
@@ -848,7 +848,6 @@ const mapDispatchToProps = dispatch => ({
 			shouldUpdateDeviceList,
 			changeFromPage,
 			showDialog,
-			updateDeviceInfo,
 		},
 		dispatch,
 	),

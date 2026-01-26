@@ -15,6 +15,7 @@ exports.getTimeConfig = getTimeConfig;
 exports.isTimeValidByConfig = isTimeValidByConfig;
 exports.isTimeValid = isTimeValid;
 exports.isAllowedDate = isAllowedDate;
+exports.formatDate = formatDate;
 
 var _moment = require('moment');
 
@@ -60,6 +61,7 @@ function syncTime(from, to) {
   to.hour(from.hour());
   to.minute(from.minute());
   to.second(from.second());
+  to.millisecond(from.millisecond());
 }
 
 function getTimeConfig(value, disabledTime) {
@@ -107,4 +109,16 @@ function isAllowedDate(value, disabledDate, disabledTime) {
     }
   }
   return true;
+}
+
+function formatDate(value, format) {
+  if (!value) {
+    return '';
+  }
+
+  if (Array.isArray(format)) {
+    format = format[0];
+  }
+
+  return value.format(format);
 }

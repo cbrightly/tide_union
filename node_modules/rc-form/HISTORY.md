@@ -1,6 +1,23 @@
 # History
 ----
 
+## 2.4.10 / 2019-11-09
+
+- There should not be any lifecycle warning now!
+
+## 2.4.0 / 2018-12-21
+
+- Field option add `preserve` to enable you keep value even if field removed.
+
+## 2.3.0 / 2018-12-17
+
+- `createForm` add `name` prop. It will be as prefix with `fieldNameProp`
+
+## 2.2.1 / 2018-07-11
+
+- `validateFieldsAndScroll` should ignore `input[type=hidden]` [#169](https://github.com/react-component/form/pull/169) [@HsuTing](https://github.com/HsuTing)
+- `mapPropsToFields` and so on support field with `null` value [#159](https://github.com/react-component/form/pull/159) [@normanrz](https://github.com/normanrz)
+
 ## 2.2.0 / 2018-04-04
 
 - Support callback in setFieldsValue [#144](https://github.com/react-component/form/pull/144)
