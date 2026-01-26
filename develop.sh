@@ -8,3 +8,4 @@ npm up lds-rc --save
 cp -r -f ./node_modules_rewrite/react-scripts/* ./node_modules/react-scripts
 #构建服务
 npm run debug
+#npm test
