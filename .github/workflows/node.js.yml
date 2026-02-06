@@ -1,24 +1,10 @@
-name: Release
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      # Fetch depth 0 is required for Changelog generation
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-
-      # ... do your compile, testing, bumpr, releasr steps here.
-
-      - name: Publish Release
-        id: publish
-        uses: packagrio/action-publishr-node@master
-        env:
-          # This is necessary in order to push a commit to the repo
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-        with:
-          # upload any assets to your github release
-          upload_assets: 'packagr-bumpr-linux-amd64'
+            - name: scarbous/node-runner
+  # You may pin to the exact commit or the version.
+  # uses: Scarbous/node-runner@59905361dcbbfec01673b39ffc5b89df5a2fb916
+  uses: Scarbous/node-runner@1.0.6
+  with:
+    # base dir of
+    dir: # optional, default is /
+    # The name of the npm script to run
+    task: # optional, default is build
+          
